@@ -4,12 +4,12 @@ import com.ezen.www.BootMybatis2Application;
 import com.ezen.www.domain.BoardVO;
 import com.ezen.www.repository.BoardMapper;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+/*import org.junit.runner.RunWith;*/
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-@RunWith(SpringRunner.class)
+/*
+@RunWith(SpringRunner.class)*/
 @SpringBootTest(classes = BootMybatis2Application.class)
 class BootMybatis2ApplicationTests {
 
