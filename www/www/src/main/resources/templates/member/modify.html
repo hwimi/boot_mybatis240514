@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<th:block th:replace="~{layout::setFragment(~{this::content})}">
+    <th:block th:fragment="content">
+        <th:block th:with="auth=${#authentication.getPrincipal()}">
+        <div class="mt-4 p-5">
+            <h1>member modify page</h1>
+            <form action="/member/modify" method="post">
+                <input type="hidden" class="form-control"   name="email" th:value="${auth.mvo.email}"  placeholder="PW...">
+                <div class="mb-3">
+                    <label for="pwd" class="form-label">Password:</label>
+                    <input type="password" class="form-control"   name="pwd" id="pwd" placeholder="PW...">
+                </div>
+                <div class="mb-3">
+                    <label for="nickName" class="form-label">Nick_Name:</label>
+                    <input type="text" class="form-control" name="nickName" th:value="${auth.mvo.nickName}" id="nickName" placeholder="nickName..">
+                </div>
+                <button type="submit" class="btn btn-primary">join</button>
+            </form>
+        </div>
+    </th:block>
+    </th:block>
+</th:block>

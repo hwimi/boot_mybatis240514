@@ -15,4 +15,10 @@ public interface MemberMapper {
     MemberVO selectEmail(String username);
 
     List<AuthVO> selectAuth(String username);
+
+    List<MemberVO> list();
+
+    List<AuthVO> selectAuths(String email);
+
+    int update(MemberVO mvo);
 }

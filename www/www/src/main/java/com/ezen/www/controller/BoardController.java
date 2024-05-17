@@ -1,9 +1,6 @@
 package com.ezen.www.controller;
 
-import com.ezen.www.domain.BoardDTO;
-import com.ezen.www.domain.BoardVO;
-import com.ezen.www.domain.FileVO;
-import com.ezen.www.domain.PagingVO;
+import com.ezen.www.domain.*;
 import com.ezen.www.handler.FileHandler;
 import com.ezen.www.handler.PagingHandler;
 import com.ezen.www.service.BoardService;

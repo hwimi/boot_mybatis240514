@@ -18,4 +18,13 @@
     <select id="selectAuth" resultType="com.ezen.www.domain.AuthVO">
         select*from auth_member where email=#{email}
     </select>
+    <select id="list" resultType="com.ezen.www.domain.MemberVO">
+        select*from member
+    </select>
+    <select id="selectAuths" resultType="com.ezen.www.domain.AuthVO">
+        select*from auth_member where email=#{email}
+    </select>
+    <update id="update">
+        update member set pwd=#{pwd}, nicK_name=#{nickName} where email=#{email}
+    </update>
 </mapper>

@@ -62,8 +62,61 @@
             <form action="/board/remove" method="post" id="delForm" style="display:none">
                 <input type="hidden" name="bno" th:value="${bvo.bno}">
             </form>
+            <!--comment 등록 라인-->
+            <!--post라인-->
+            <div class="input-group mb-3">
+  		<span class="input-group-text" id="cmtWriter">anymore</span>
+                <br>
+                    <input type="text" id="cmtText" class="form-control" placeholder="Add Comment..." aria-label="Username" aria-describedby="basic-addon1">
+                <button type="button" id="cmtAddBtn" class="btn btn-secondary">post</button>
+            </div>
+
+            <!--spred 라인-->
+            <!-- 댓글 목록 영역 -->
+            <ul class="list-group list-group-flush" id="cmtListArea">
+                <li class="list-group-item">
+                    <div class="fw-bold writer">Writer</div>
+                    <div class="content">content</div>
+                    <span class="badge rounded-pill text-bg-warning">regDate</span>
+                </li>
+            </ul>
+
+            <!--끝-->
+            <!-- 댓글 더보기 버튼  -->
+            <div>
+                <button type="button" id="moreBtn" data-page="1" class="btn btn-dark" style="visibility:hidden"> MOER + </button>
+            </div>
+            <!--댓글 더보기 끝-->
+            <!--모달창-->
+            <!-- 모달창 라인 -->
+            <div class="modal" id="myModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modWriter">Writer</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" class="form-control" id="cmtTextMod">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="cmtModBtn"  data-bs-dismiss="modal">modify</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+            <!--모달창 끝-->
+            <script th:inline="javascript">
+                const bnoVal=[[${bvo.bno}]];
+                console.log(bnoVal);
+            </script>
         <script th:src="@{/js/boardDetail.js}"></script>
+            <script th:src="@{/js/comment.js}"></script>
+            <script >
+                spreadCommentList(bnoVal)
+            </script>
         </th:block>
     </th:block>
 </th:block>

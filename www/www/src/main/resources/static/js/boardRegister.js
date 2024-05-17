@@ -42,4 +42,6 @@ document.addEventListener('change',(e)=>{
             document.getElementById('regBtn').disabled=true;
         }
     }
+  
 });
+

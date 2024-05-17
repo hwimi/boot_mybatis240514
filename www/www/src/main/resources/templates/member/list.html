@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<th:block th:replace="~{layout::setFragment(~{this::content})}">
+    <th:block th:fragment="content">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+                <h1>member list page</h1>
+                <div class="col" th:each="mvo:${list}">
+                    <div class="card">
+                        <img src="/image/강아지1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">[[${mvo.nickName}]]</h5>
+                            <p class="card-text">[[${mvo.email}]]</p>
+                            <div class="mb-3">
+                                <span class="badge text=bg-warning" th:each="authList:${mvo.authList}">[[${authList.auth}]]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </th:block>
+    </th:block>
+</th:block>
+</html>
